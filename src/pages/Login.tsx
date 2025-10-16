@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import Input from "../components/Input";
 import SubTitle from "../components/SubTitle";
@@ -5,12 +6,15 @@ import Title from "../components/Title";
 import useHandleForm from "../hooks/useHandleForm";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault(); // Prevent page reload
+    navigate("/setting");
+  };
   const { values, handleChange, allFilled } = useHandleForm({
     email: "",
     password: "",
   });
-  console.log(values);
-  console.log(allFilled);
   return (
     <div className="flex flex-col gap-4 pt-20 px-5 m-auto h-[100dvh] max-w-[375px] bg-[#F7F8F9]">
       <div>
@@ -21,7 +25,7 @@ const Login = () => {
         <SubTitle content="Lorem ipsum dolor sit amet," />
         <SubTitle content="consectetur adipiscing elit," />
       </div>
-      <form className="flex flex-col gap-4 py-2">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-4 py-2">
         <Input
           legend="Email Address"
           placeholder="Enter Email Address"

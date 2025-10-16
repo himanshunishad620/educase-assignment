@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import Input from "../components/Input";
 import Radio from "../components/Radio";
@@ -5,6 +6,11 @@ import Title from "../components/Title";
 import useHandleForm from "../hooks/useHandleForm";
 
 const SignUp = () => {
+  const navigate = useNavigate();
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault(); // Prevent page reload
+    navigate("/setting");
+  };
   const { values, handleChange, allFilled } = useHandleForm({
     email: "",
     password: "",
@@ -20,7 +26,7 @@ const SignUp = () => {
         <Title content="Create your" />
         <Title content="PopX account" />
       </div>
-      <form className="flex flex-col gap-4 py-2">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-4 py-2">
         <Input
           legend="Full Name"
           placeholder="Enter Full Name"

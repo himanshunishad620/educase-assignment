@@ -1,0 +1,50 @@
+import Button from "../components/Button";
+import Input from "../components/Input";
+import SubTitle from "../components/SubTitle";
+import Title from "../components/Title";
+import useHandleForm from "../hooks/useHandleForm";
+
+const Login = () => {
+  const { values, handleChange, allFilled } = useHandleForm({
+    email: "",
+    password: "",
+  });
+  console.log(values);
+  console.log(allFilled);
+  return (
+    <div className="flex flex-col gap-4 pt-20 px-5 m-auto h-[100dvh] max-w-[375px] bg-[#F7F8F9]">
+      <div>
+        <Title content="Signin to your" />
+        <Title content="PopX account" />
+      </div>
+      <div>
+        <SubTitle content="Lorem ipsum dolor sit amet," />
+        <SubTitle content="consectetur adipiscing elit," />
+      </div>
+      <form className="flex flex-col gap-4 py-2">
+        <Input
+          legend="Email Address"
+          placeholder="Enter Email Address"
+          type="email"
+          value={values.email}
+          name="email"
+          onChange={handleChange}
+          required={true}
+        />
+        <Input
+          legend="Password"
+          placeholder="Enter password"
+          type="password"
+          value={values.password}
+          name="password"
+          onChange={handleChange}
+          required={true}
+          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+        />
+        <Button variant="primary" text="Login" disabled={!allFilled} />
+      </form>
+    </div>
+  );
+};
+
+export default Login;

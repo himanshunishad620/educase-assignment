@@ -4,6 +4,7 @@ import Login from "./pages/Login.tsx";
 import Home from "./pages/Home.tsx";
 import SignUp from "./pages/SignUp.tsx";
 import Setting from "./pages/Setting.tsx";
+import NoTFound from "./pages/NoTFound.tsx";
 
 export default function Router() {
   return (
@@ -14,7 +15,7 @@ export default function Router() {
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<SignUp />} />
           <Route path="setting" element={<Setting />} />
-          <Route path="*" element={<div>Not found</div>} />
+          <Route path="*" element={<NoTFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

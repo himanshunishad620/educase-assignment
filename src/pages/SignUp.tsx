@@ -8,7 +8,7 @@ import useHandleForm from "../hooks/useHandleForm";
 const SignUp = () => {
   const navigate = useNavigate();
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault(); // Prevent page reload
+    e.preventDefault();
     navigate("/setting");
   };
   const { values, handleChange, allFilled } = useHandleForm({
@@ -19,7 +19,6 @@ const SignUp = () => {
     phoneNumber: "",
     agency: "Yes",
   });
-  console.log(values);
   return (
     <div className="relative flex flex-col gap-6 pt-10 px-5 m-auto h-[100dvh] max-w-[375px] bg-[#F7F8F9]">
       <div>

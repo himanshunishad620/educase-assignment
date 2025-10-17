@@ -1,5 +1,3 @@
-// import { Input } from "./components/Input";
-
 import { Outlet } from "react-router-dom";
 
 const App = () => {

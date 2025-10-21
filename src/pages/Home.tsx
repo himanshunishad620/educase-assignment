@@ -3,7 +3,7 @@ import Button from "../components/Button";
 import Title from "../components/Title";
 import Paragraph from "../components/Paragraph";
 
-const Home = () => {
+const Home: React.FC = () => {
   const navigate = useNavigate();
   const handleCreateAccount = () => navigate("signup");
   const handleAlreadyRegistered = () => navigate("login");

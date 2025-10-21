@@ -5,7 +5,7 @@ import Radio from "../components/Radio";
 import Title from "../components/Title";
 import useHandleForm from "../hooks/useHandleForm";
 
-const SignUp = () => {
+const SignUp: React.FC = () => {
   const navigate = useNavigate();
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

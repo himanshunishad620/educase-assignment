@@ -2,7 +2,7 @@ import Card from "../components/Card";
 import dp from "../assets/girldp.jpg";
 import Paragraph from "../components/Paragraph";
 
-const Setting = () => {
+const Setting: React.FC = () => {
   return (
     <div className="m-auto h-[100dvh] max-w-[375px] bg-[#F7F8F9]">
       <div className="h-17 flex items-center pl-5 shadow bg-white">

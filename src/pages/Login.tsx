@@ -5,7 +5,7 @@ import Paragraph from "../components/Paragraph";
 import Title from "../components/Title";
 import useHandleForm from "../hooks/useHandleForm";
 
-const Login = () => {
+const Login: React.FC = () => {
   const navigate = useNavigate();
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

@@ -37,13 +37,12 @@ const Login = () => {
         />
         <Input
           legend="Password"
-          placeholder="Enter password"
+          placeholder="Enter Password"
           type="password"
           value={values.password}
           name="password"
           onChange={handleChange}
           required={true}
-          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
         />
         <Button variant="primary" text="Login" disabled={!allFilled} />
       </form>

@@ -56,7 +56,7 @@ const SignUp = () => {
         />
         <Input
           legend="Password"
-          placeholder="Enter password"
+          placeholder="Enter Password"
           type="password"
           value={values.password}
           name="password"
